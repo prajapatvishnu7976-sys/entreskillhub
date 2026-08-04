@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3b82f6" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="EntreSkillHub - Skill to Startup Enablement Platform" />
+    <meta
+      name="description"
+      content="Transform your skills into successful micro-businesses. Get personalized business ideas, step-by-step roadmaps, expert mentorship, and learning resources to start your entrepreneurial journey."
+    />
+    <meta
+      name="keywords"
+      content="entrepreneurship, skills, business ideas, mentorship, startup, micro-enterprise, roadmap, learning, self-employment"
+    />
+    <meta name="author" content="EntreSkillHub" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://entreskillhub.com/" />
+    <meta property="og:title" content="EntreSkillHub - Skill to Startup Enablement Platform" />
+    <meta
+      property="og:description"
+      content="Transform your skills into successful micro-businesses with personalized guidance."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.png" />
+    <meta property="og:site_name" content="EntreSkillHub" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EntreSkillHub" />
+    <meta
+      name="twitter:description"
+      content="Transform your skills into successful micro-businesses."
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Manifest -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+    <title>EntreSkillHub - Skill to Startup Enablement Platform</title>
+
+    <style>
+      /* Loading Screen */
+      #root-loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        transition: opacity 0.5s ease-out;
+      }
+      #root-loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .loader-logo {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 2rem;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        letter-spacing: -1px;
+      }
+      .loader-spinner {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid rgba(255, 255, 255, 0.1);
+        border-top-color: #3b82f6;
+        border-right-color: #8b5cf6;
+        animation: spin 0.8s linear infinite;
+      }
+      .loader-text {
+        color: #94a3b8;
+        margin-top: 1.5rem;
+        font-size: 0.875rem;
+        font-family: 'Inter', sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      .loader-dots span {
+        animation: blink 1.4s infinite both;
+      }
+      .loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+      .loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+      @keyframes blink {
+        0%, 80%, 100% { opacity: 0; }
+        40% { opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run EntreSkillHub.</noscript>
+    
+    <!-- Loading Screen -->
+    <div id="root-loader">
+      <div class="loader-logo">🚀 EntreSkillHub</div>
+      <div class="loader-spinner"></div>
+      <div class="loader-text">
+        Loading<span class="loader-dots"><span>.</span><span>.</span><span>.</span></span>
+      </div>
+    </div>
+
+    <div id="root"></div>
+
+    <script>
+      // Remove loader when React mounts
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var loader = document.getElementById('root-loader');
+          if (loader) {
+            loader.classList.add('fade-out');
+            setTimeout(function () {
+              loader.remove();
+            }, 500);
+          }
+        }, 800);
+      });
+    </script>
+  </body>
+</html>

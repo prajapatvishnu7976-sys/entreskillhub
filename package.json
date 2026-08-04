@@ -1,0 +1,21 @@
+{
+  "name": "entreskillhub",
+  "version": "1.0.0",
+  "description": "EntreSkillHub - Skill to Startup Enablement Platform (Full Stack)",
+  "private": true,
+  "scripts": {
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "entrepreneurship",
+    "skills",
+    "startup",
+    "mentorship",
+    "mern-stack"
+  ],
+  "author": "EntreSkillHub Team",
+  "license": "MIT"
+}
